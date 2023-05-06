@@ -2,7 +2,7 @@ import React from 'react';
 
 function Navbar(){
     return(
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
             <div class="container pt-2">
                 <a class="navbar-brand">
                     { /*<img src="https://placeholder.pics/svg/150x50/888888/EEE/Logo" alt="..." height="36"/> */}
