@@ -1,14 +1,18 @@
 import './App.css';
-import Options from './navigation/Options';
+import Navbar from './navigation/Navbar';
 import Name from './navigation/Name';
+import About from './navigation/About';
+import Footer from './navigation/Footer';
 
 
 
 function App() {
   return (
     <div className="App">
-      <Options/>
+      <Navbar/>
       <Name/>
+      <About/>
+      <Footer/>
     </div>
   );
 }
