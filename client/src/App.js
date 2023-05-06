@@ -1,19 +1,17 @@
-import './App.css';
-import Navbar from './navigation/Navbar';
-import Name from './navigation/Name';
-import About from './navigation/About';
-import Footer from './navigation/Footer';
-
+import Home from './Home';
+import ChatScreen from './chatbot/ChatScreen';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 function App() {
   return (
-    <div className="App">
-      <Navbar/>
-      <Name/>
-      <About/>
-      <Footer/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route index element={<Home />} />
+        <Route path="/chat" element={<ChatScreen />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

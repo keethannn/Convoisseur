@@ -2,7 +2,7 @@ import React from 'react';
 
 function About(){
     return(
-        <div>
+        <section id='about'>
             <div class="row g-0">
                 <div class="col w-50">
                     <img class="img-fluid" src="download.png"/>
@@ -23,7 +23,7 @@ function About(){
                     </p>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
