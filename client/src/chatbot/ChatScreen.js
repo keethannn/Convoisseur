@@ -35,7 +35,6 @@ function ChatScreen(){
 
 
     if (!init){
-        setInit(true)
         callFromApi('', name, numInteractions).then(function(response) {
             if (response.ok){
                 return response.text()
@@ -45,6 +44,7 @@ function ChatScreen(){
             components.push([0, text.trim().replace(/"/g, '')])
             console.log(components)
         })
+        setInit(true)
     }
     
     return <div>
@@ -58,6 +58,7 @@ function ChatScreen(){
                 <div class="container pt-1 justify-content-center text-center">
                     <div class="d-inline p-2">
                         <input class="form-control-lg w-75" type="text" placeholder="Send a message." aria-label=".form-control-lg example" 
+                            disabled={!init}
                             onChange={(evt) => {
                                 setInput(evt.target.value)
                             }}
@@ -68,7 +69,20 @@ function ChatScreen(){
                             onClick={() => {
                                 console.log(components);
                                 components.push([1, input]);
-                                callFromApi(input).then(function(response) {
+                                callFromApi(
+                                    [...components, input].map((value, index) => {
+                                        if (index == 0){
+                                            return "The first thing you say is: " + value[1];
+                                        } else if (value[0] == 0){
+                                            return "You respond: " + value[1]
+                                        } else {
+                                            return name + " says: " + value[1]
+                                        }
+                                    }).join('\n') + '\nYou respond: '
+                                    , 
+                                    name,
+                                    numInteractions
+                                ).then(function(response) {
                                     if (response.ok){
                                         return response.text()
                                     }
