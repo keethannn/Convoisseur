@@ -12,7 +12,7 @@
 .chat-message {
   border-radius: 5px;
   max-width: 50%;
-  margin: 20px 20%;
+  margin: 20px auto;
   padding: 8px;
 }
 
