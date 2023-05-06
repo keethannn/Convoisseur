@@ -1,6 +1,7 @@
 import {React, useState} from 'react';
 import Typewriter from 'typewriter-effect';
 import { useNavigate } from 'react-router-dom';
+import { RadioButton } from './RadioButton';
 
 function InputBox({question, placeholder, hasNext}){
     const [userName, setUserName] = useState('');
@@ -53,6 +54,11 @@ function InputBox({question, placeholder, hasNext}){
                 }
             </div>
             <br></br>
+            <div class="container pt-1 justify-content-center text-center">
+                <RadioButton label="Friend" value="Friend" />
+                <RadioButton label="Interview" value="Interview" />
+                <RadioButton label="Date" value="Date" />
+            </div>
             <br></br>
             <br></br>
             <br></br>
