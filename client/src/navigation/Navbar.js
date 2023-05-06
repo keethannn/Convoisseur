@@ -5,8 +5,8 @@ function Navbar(){
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
             <div class="container pt-2">
                 <a class="navbar-brand">
-                    { /*<img src="https://placeholder.pics/svg/150x50/888888/EEE/Logo" alt="..." height="36"/> */}
-                    <p class="display-6">Convoisseur</p>
+                    <img src="Convoisseur.png" alt="..." height="70"/> 
+                    { /* <p class="display-6">Convoisseur</p> */}
                 </a> 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

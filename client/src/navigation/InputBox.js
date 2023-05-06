@@ -68,6 +68,8 @@ function InputBox({question, placeholder, hasNext}){
             <br></br>
             <br></br>
             <br></br>
+            <br></br>
+            <br></br>
         </div>
     );
 };
