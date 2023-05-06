@@ -1,9 +1,10 @@
 import '../App.css'
+import './Chat.css'
 import Typewriter from 'typewriter-effect'
 
 function AIChat({data, useTypewriter}) {
     console.log(data, useTypewriter)
-    return (<div>
+    return (<div className='chat-message ai-message '>
                 <p1 className='text-white'>
                     {
                         useTypewriter

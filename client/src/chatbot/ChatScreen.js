@@ -3,6 +3,7 @@ import AIChat from './AIChat';
 import UserChat from './UserChat';
 
 import '../App.css'
+import './Chat.css'
 import { useState } from 'react';
 
 async function callFromApi(myConcatenatedMessage, userName, numInteractions) {
@@ -47,7 +48,7 @@ function ChatScreen(){
     }
     
     return <div>
-        <body className="flex flex-col items-center bg-dark text-sm dark:bg-gray-800">
+        <body className="flex flex-col items-center text-sm">
             {
                 components.map((val, index) => (val[0] == 0) ? <AIChat data={val[1]} useTypewriter={index%2 == 0 && index==components.length-1} key={index} /> : <UserChat message={val[1]} />)
             }

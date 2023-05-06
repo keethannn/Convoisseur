@@ -1,0 +1,74 @@
+/* Body styles */
+/* body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1f2937;
+  font-size: 16px;
+  color: #fff;
+} */
+
+/* Chat message styles */
+.chat-message {
+  border-radius: 5px;
+  max-width: 50%;
+  margin: 20px 20%;
+  padding: 8px;
+}
+
+/* AI Chat message styles */
+.ai-message {
+  background-color: #383e45;
+}
+
+/* User Chat message styles */
+.user-message {
+  background-color: #919398;
+}
+
+/* Input styles */
+.form-control-lg {
+  border: none;
+  background-color: #6b7280;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Send button styles */
+.btn {
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.btn-success {
+  background-color: #10b981;
+  color: #fff;
+}
+
+/* Dark mode styles */
+.dark {
+  background-color: #1f2937;
+  color: #fff;
+}
+
+.dark .form-control-lg {
+  background-color: #4b5563;
+}
+
+.dark .btn-success {
+  background-color: #10b981;
+  color: #fff;
+}
+
+.dark .ai-message {
+  background-color: #4b5563;
+}
+
+.dark .user-message {
+  background-color: #2563eb;
+  color: #fff;
+}
