@@ -4,8 +4,10 @@ import os
 from os.path import join, dirname
 
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
@@ -24,7 +26,9 @@ def call():
         max_tokens=300,
     )[0]
     print(res)
-    return jsonify(res)
+    if res[0] == '\n':
+        return res[1:]
+    return res
 
 @app.route('/friend', methods=['POST'])
 def call_friend():

@@ -1,7 +1,7 @@
 
 
-function UserChat(message) {
-    return (<p1>{message}</p1>);
+function UserChat({ message }) {
+    return (<div className='bg-secondary'><p1 className='text-white'>{message}</p1></div>)
 }
 
 export default UserChat
