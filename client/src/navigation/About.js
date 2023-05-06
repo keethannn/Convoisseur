@@ -7,7 +7,7 @@ function About(){
                 <div class="col w-50">
                     <img class="img-fluid" src="download.png"/>
                 </div>
-                <div class="col text-start bg-secondary text-white p-4 align-middle">
+                <div class="col text-start bg-secondary bg-gradient text-white p-4 align-middle">
                     <h1 class="fw-light">
                         Who are we?
                     </h1>

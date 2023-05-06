@@ -12,7 +12,7 @@ function InputBox({question, placeholder, hasNext}){
     }
 
     return(
-        <div class="bg-dark pt-5 pb-5 justify-content-center">
+        <div class="bg-dark bg-gradient pt-5 pb-5 justify-content-center">
             <br></br>
             <br></br>
             <br></br>
@@ -59,8 +59,6 @@ function InputBox({question, placeholder, hasNext}){
                 <RadioButton label="Interview" value="Interview" />
                 <RadioButton label="Date" value="Date" />
             </div>
-            <br></br>
-            <br></br>
             <br></br>
             <br></br>
             <br></br>
