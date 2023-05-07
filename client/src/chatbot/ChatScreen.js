@@ -4,7 +4,7 @@ import UserChat from './UserChat';
 
 import '../App.css'
 import './Chat.css'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 async function callFromApi(myConcatenatedMessage, userName, numInteractions) {
     let formData = new FormData()
@@ -45,7 +45,7 @@ function ChatScreen(){
     const [components, setComponents] = useState([])
 
 
-    if (!init){
+    useEffect(() => {
         callFromApi('', name, numInteractions).then(function(response) {
             if (response.ok){
                 return response.text()
@@ -54,9 +54,9 @@ function ChatScreen(){
         }).then(function(text) {
             components.push([0, text.trim().replace(/"/g, '')])
         }).finally(function(){
-            setInit(true);
+            setInit(true)
         })
-    }
+    }, [])
     
     return <div>
         <body className="flex flex-col items-center text-sm chat-bottom-padding">
