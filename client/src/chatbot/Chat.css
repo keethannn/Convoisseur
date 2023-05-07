@@ -72,3 +72,7 @@
   background-color: #2563eb;
   color: #fff;
 }
+
+.chat-bottom-padding {
+  padding-bottom: 80px;
+}

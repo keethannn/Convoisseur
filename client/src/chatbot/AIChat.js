@@ -3,9 +3,8 @@ import './Chat.css'
 import Typewriter from 'typewriter-effect'
 
 function AIChat({data, useTypewriter}) {
-    console.log(data, useTypewriter)
     return (<div className='chat-message ai-message '>
-                <p1 className='text-white'>
+                <div style={{ whiteSpace: "pre-line" }} className='text-white'>
                     {
                         useTypewriter
                         ?
@@ -20,7 +19,7 @@ function AIChat({data, useTypewriter}) {
                         :
                         data
                     }
-                </p1> 
+                </div> 
             </div>);
 }
 

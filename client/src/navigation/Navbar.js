@@ -4,7 +4,7 @@ function Navbar(){
     return(
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
             <div class="container pt-2">
-                <a class="navbar-brand">
+                <a class="navbar-brand" href='/'>
                     <img src="Convoisseur.png" alt="..." height="70"/> 
                     { /* <p class="display-6">Convoisseur</p> */}
                 </a> 
@@ -17,7 +17,7 @@ function Navbar(){
                     <a className="nav-link active" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link active" href="#">Contact Us</a>
+                    <a class="nav-link active" href="#contact">Contact Us</a>
                     </li>
                     <li class="nav-item">
                     <a class="nav-link active" href="#">FAQs</a>

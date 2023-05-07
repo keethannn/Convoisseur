@@ -55,3 +55,15 @@ body
     height: 100%;
     background-color: #282c34;
 }
+
+.btn-margin-left {
+  margin-left: 16px;
+}
+
+.padding-right-linkedin{
+  padding-right: 40px;
+}
+
+.margin-top-buffer {
+  margin-top: 7.5px;
+}

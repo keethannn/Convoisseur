@@ -3,6 +3,7 @@ import Navbar from './navigation/Navbar';
 import InputBox from './navigation/InputBox';
 import About from './navigation/About';
 import Footer from './navigation/Footer';
+import Contact from './navigation/Contact';
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
         hasNext={true}  
       />
       <About/>
+      <Contact />
       <Footer/>
     </div>
   );
