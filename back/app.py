@@ -21,7 +21,7 @@ def call():
     prompt = request.form.get('prompt')
     res = co.generate(
         prompt=prompt,
-        model="command-light-nightly",
+        model="command-nightly",
         temperature=0.1,
         max_tokens=300,
     )[0]
@@ -35,9 +35,11 @@ def call_friend():
     prompt = request.form.get('prompt')
     res = co.generate(
         prompt=prompt,
-        model="command-light-nightly",
+        model="command-nightly",
         temperature=1,
         max_tokens=300,
     )[0]
     print(res)
-    return jsonify(res)
+    if res[0] == '\n':
+        return res[1:]
+    return res

@@ -22,6 +22,22 @@ async function callFromApi(myConcatenatedMessage, userName, numInteractions) {
     })
 }
 
+async function callFromApiFriend(myConcatenatedMessage, userName, numInteractions) {
+  let formData = new FormData()
+
+  if (numInteractions == 0){
+      const opener = `You are meeting with your friend ${userName} for a conversation. You do not have a name. Be engaging and respectful. Ask questions about ${userName} and try to get to know him better. You start the conversation by saying: `
+      formData.append('prompt', opener);
+  } else {
+      formData.append('prompt', myConcatenatedMessage)
+  }
+
+  return await fetch('http://127.0.0.1:5000/friend', {
+      method: 'POST',
+      body: formData
+  })
+}
+
 function ChatScreen(){
     const location = useLocation()
     const {name} = location.state
@@ -46,7 +62,7 @@ function ChatScreen(){
 
 
     useEffect(() => {
-        callFromApi('', name, numInteractions).then(function(response) {
+        callFromApiFriend('', name, numInteractions).then(function(response) {
             if (response.ok){
                 return response.text()
             }
@@ -99,16 +115,16 @@ function ChatScreen(){
                                         return;
                                     }
                                     components.push([1, input]);
-                                    callFromApi(
+                                    callFromApiFriend(
                                         [...components, input].map((value, index) => {
                                             if (index == 0){
                                                 return "The first thing you say is: " + value[1];
                                             } else if (value[0] == 0){
-                                                return "You respond: \"" + value[1] + "\""
+                                                return "I respond: \"" + value[1] + "\""
                                             } else {
                                                 return name + " says: \"" + value[1] + "\""
                                             }
-                                        }).join('\n') + `\nYou say:`
+                                        }).join('\n') + `\nI say:`
                                         , 
                                         name,
                                         numInteractions+1
@@ -131,13 +147,13 @@ function ChatScreen(){
                                     callFromApi(
                                         [...components, input].map((value, index) => {
                                             if (index == 0){
-                                                return "You say: " + value[1];
+                                                return "I say: " + value[1];
                                             } else if (value[0] == 0){
-                                                return "You say: " + value[1];
+                                                return "I say: " + value[1];
                                             } else {
                                                 return name + " says: " + value[1];
                                             }
-                                        }).join('\n') + `\nList 3 good things ${name} did in this conversation. List 3 bad things ${name} did in this conversation. Rate this conversation out of 5.`
+                                        }).join('\n') + `\nHow did ${name} do in this conversation. Give positive and negative feedback for how ${name} can improve in conversations.`
                                         , 
                                         name,
                                         numInteractions
