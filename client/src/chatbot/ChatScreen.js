@@ -10,7 +10,7 @@ async function callFromApi(myConcatenatedMessage, userName, numInteractions) {
     let formData = new FormData()
 
     if (numInteractions == 0){
-        const opener = `You are meeting with your friend ${userName}. Be engaging and . You say: `
+        const opener = `You are meeting with your friend ${userName}. Be engaging and respectful. You say: `
         formData.append('prompt', opener);
     } else {
         formData.append('prompt', myConcatenatedMessage)
@@ -95,6 +95,9 @@ function ChatScreen(){
                         <div class="d-inline p-2">
                             <button className="btn btn-lg btn-success mb-2 z-1"
                                 onClick={() => {
+                                    if (!input){
+                                        return;
+                                    }
                                     components.push([1, input]);
                                     callFromApi(
                                         [...components, input].map((value, index) => {
@@ -108,7 +111,7 @@ function ChatScreen(){
                                         }).join('\n') + `\nYou say:`
                                         , 
                                         name,
-                                        numInteractions
+                                        numInteractions+1
                                     ).then(function(response) {
                                         if (response.ok){
                                             return response.text()
@@ -128,13 +131,13 @@ function ChatScreen(){
                                     callFromApi(
                                         [...components, input].map((value, index) => {
                                             if (index == 0){
-                                                return "A: " + value[1];
+                                                return "You say: " + value[1];
                                             } else if (value[0] == 0){
-                                                return "A: " + value[1];
+                                                return "You say: " + value[1];
                                             } else {
-                                                return "B: " + value[1];
+                                                return name + " says: " + value[1];
                                             }
-                                        }).join('\n') + `\nWhat do you think about B's conversation skills?`
+                                        }).join('\n') + `\nList 3 good things ${name} did in this conversation. List 3 bad things ${name} did in this conversation. Rate this conversation out of 5.`
                                         , 
                                         name,
                                         numInteractions

@@ -21,6 +21,7 @@ function AIChat({data, useTypewriter}) {
                             className='text-white'
                             onInit={(typewriter) => {
                                 typewriter
+                                .changeDelay(50)
                                 .typeString(data)
                                 .start()
                             }}
